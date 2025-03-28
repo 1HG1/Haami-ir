@@ -137,18 +137,13 @@
     margin-left: 10px;
   }
 
-  .theme-chooser {
-    display: flex;
+  .logo-container {
+    padding: 10px;
   }
 
-  .theme-button {
-    background-color: transparent;
-    border: none;
-    padding: 8px 12px;
-    color: white;
-    cursor: pointer;
-    margin-left: 5px;
-    border-radius: 5px;
+  .logo {
+    width: 50px;
+    height: auto;
   }
 
   .light-theme {
@@ -178,9 +173,8 @@
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
-  <div class="theme-chooser">
-    <button class="theme-button" onclick="setTheme('default')">Dark</button>
-    <button class="theme-button" onclick="setTheme('light')">Light</button>
+  <div class="logo-container">
+    <img src="logo.png" alt="Logo" class="logo">
   </div>
 </nav>
 
@@ -222,7 +216,7 @@
         <p>Creating interactive games using Unity and C#.</p>
         <button>View Project</button>
       </div>
-          <div class="project-box">
+      <div class="project-box">
         <h3>Project 6: Cloud Computing</h3>
         <p>Deploying and managing applications on cloud platforms.</p>
         <button>View Project</button>
@@ -241,22 +235,5 @@
     </div>
   </div>
 </div>
-
-<script>
-  function setTheme(themeName) {
-    localStorage.setItem('theme', themeName);
-    document.body.className = (themeName === 'light') ? 'light-theme' : '';
-  }
-
-  function getTheme() {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
-      document.body.className = 'light-theme';
-    }
-}
-
-getTheme(); // Apply saved theme on page load
-</script>
-
 </body>
 </html>
