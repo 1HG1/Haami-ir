@@ -17,6 +17,9 @@
     border-radius: 10px;
     margin: 20px auto;
     width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   nav a {
@@ -133,14 +136,52 @@
     height: 30px;
     margin-left: 10px;
   }
+
+  .theme-chooser {
+    display: flex;
+  }
+
+  .theme-button {
+    background-color: transparent;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 5px;
+  }
+
+  .light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  .light-theme nav, .light-theme .section-box, .light-theme .project-box {
+    background-color: white;
+    color: #333;
+  }
+
+  .light-theme .project-box {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .light-theme .contact-icon {
+    filter: none;
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#home">Home</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="theme-chooser">
+    <button class="theme-button" onclick="setTheme('default')">Default</button>
+    <button class="theme-button" onclick="setTheme('light')">Light</button>
+  </div>
 </nav>
 
 <div class="container">
@@ -200,6 +241,22 @@
     </div>
   </div>
 </div>
+
+<script>
+  function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.body.className = (themeName === 'light') ? 'light-theme' : '';
+  }
+
+  function getTheme() {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'light') {
+      document.body.className = 'light-theme';
+    }
+}
+
+getTheme(); // Apply saved theme on page load
+</script>
 
 </body>
 </html>
