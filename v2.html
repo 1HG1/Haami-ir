@@ -11,22 +11,18 @@
             box-sizing: border-box;
         }
 
-        html, body {
-            height: 100%;
-            width: 100%;
+        html {
+            scroll-behavior: smooth;
         }
 
-        #gradient-canvas {
-            width: 100%;
-            height: 100%;
-            --gradient-color-1: #a960ee;
-            --gradient-color-2: #ff333d;
-            --gradient-color-3: #90e0ff;
-            --gradient-color-4: #ffcb57;
-            z-index: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
+        body {
+            background-color: #000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            position: relative;
+            overflow: auto; /* Enables scrolling */
         }
 
         nav {
@@ -52,12 +48,41 @@
         }
 
         nav a:hover {
-            color: #ff8c00;
+            color: #B43A98;
+        }
+
+        /* Background Video */
+        .video-container {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100vw;
+         height: 100vh;
+         overflow: hidden;
+         z-index: -1;
+        } 
+
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: #A810B3;
+          background: #A810B3;
+background: linear-gradient(to right, #A810B3 0%, #FF7700 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
         }
 
         section {
             padding: 80px 20px;
-            margin: 20px auto;
+            margin: 40px auto;
             width: 80%;
             border-radius: 15px;
             background: rgba(255, 255, 255, 0.1);
@@ -66,9 +91,27 @@
             z-index: 1;
         }
 
-        .project {
+        #about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        #about img {
+            max-width: 40%;
+            border-radius: 15px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             width: 80%;
-            margin: 20px auto;
+            margin: auto;
+        }
+
+        .project {
             padding: 20px;
             border-radius: 15px;
             background: rgba(255, 255, 255, 0.15);
@@ -78,7 +121,6 @@
             gap: 20px;
             box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
             text-align: left;
-            position: relative;
         }
 
         .project img {
@@ -86,91 +128,64 @@
             height: 100px;
             border-radius: 10px;
         }
-
-        .project h3 {
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            font-size: 1.4em;
-            margin: 0;
-        }
-
-        .project p {
-            font-size: 1em;
-        }
-
-        .title {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgb(255 255 255 / 26%);
-            border-radius: 10px;
-            border: 1px solid rgb(255 255 255 / 15%);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            font-size: 30px;
-            font-family: sans-serif;
-            padding: 30px 40px;
-            text-align: center;
-            line-height: 1.4;
-            z-index: 2;
-        }
     </style>
 </head>
 <body>
 
-    <canvas id="gradient-canvas"></canvas>
-
     <nav>
-        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Contact Me</a>
     </nav>
 
-    <div class="title">Welcome to My Portfolio</div>
-
-    <section id="home">
-        <h2>Home</h2>
-        <p>Welcome to my portfolio! Here, you'll find my latest projects and creative work.</p>
-    </section>
+    <!-- Background Video -->
+<video autoplay loop muted playsinline>
+    <source src="bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
     <section id="about">
-        <h2>About Me</h2>
-        <p>I am passionate about Minecraft commands, C++ coding, and creative tech.</p>
+        <div>
+            <div class="section-title">Hello!</div>
+            <p>I am passionate about Minecraft commands, C++ coding, and creative tech.</p>
+        </div>
+        <img src="Images/About.png" alt="About Image">
     </section>
-
+    <div class="section-title">Projects</div>
     <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project">
-            <img src="https://via.placeholder.com/100" alt="Minecraft Commands">
-            <h3>Custom Minecraft Commands</h3>
-            <div>
-                <p>Creating advanced Minecraft functions using scoreboards and triggers.</p>
+        <div class="project-grid">
+            <div class="project">
+                <img src="Images/Prj1.png" alt="Project">
+                <div>
+                    <p>Creating advanced Minecraft functions using scoreboards and triggers.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="project">
-            <img src="https://via.placeholder.com/100" alt="AI Web Builder">
-            <h3>AI-Powered Web Builder</h3>
-            <div>
-                <p>Exploring AI-driven tools that generate fully responsive websites.</p>
+            <div class="project">
+                <img src="Images/Prj2.png" alt="Project">
+                <div>
+                    <p>Exploring AI-driven tools that generate fully responsive websites.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="project">
-            <img src="https://via.placeholder.com/100" alt="Code Editor">
-            <h3>Syntax Highlighting Code Editor</h3>
-            <div>
-                <p>Building a sleek code editor with custom syntax highlighting.</p>
+            <div class="project">
+                <img src="Images/Prj3.png" alt="Project">
+                <div>
+                    <p>Building a sleek code editor with custom syntax highlighting.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="Images/Prj4.png" alt="Project">
+                <div>
+                    <p>Developing a futuristic UI with glowing effects and smooth transitions.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
+        <div class="section-title">Contact Me</div>
         <p>Email: yourname@example.com</p>
         <p>GitHub: github.com/yourprofile</p>
     </section>
