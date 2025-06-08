@@ -10,7 +10,24 @@
             padding: 0;
             box-sizing: border-box;
         }
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+        }
 
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
         html {
             scroll-behavior: smooth;
         }
@@ -131,10 +148,10 @@ background: linear-gradient(to right, #A810B3 0%, #FF7700 100%);
     </style>
 </head>
 <body>
-
+<div class="d-flex flex-column justify-content-center w-100 h-100"></div>
     <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">My Projects</a>
         <a href="#contact">Contact Me</a>
     </nav>
 
@@ -147,47 +164,50 @@ background: linear-gradient(to right, #A810B3 0%, #FF7700 100%);
     <section id="about">
         <div>
             <div class="section-title">Hello!</div>
-            <p>I am passionate about Minecraft commands, C++ coding, and creative tech.</p>
+            <p>I am Haami!</p>
+            <p>I'm a programmer! I make cool websites, make desktop apps and I even make operating systems!</p>
         </div>
         <img src="Images/About.png" alt="About Image">
     </section>
-    <div class="section-title">Projects</div>
+    <h2>My</h2><div class="section-title">Projects</div>
     <section id="projects">
         <div class="project-grid">
             <div class="project">
                 <img src="Images/Prj1.png" alt="Project">
                 <div>
-                    <p>Creating advanced Minecraft functions using scoreboards and triggers.</p>
+                    <h3>HamOS</h3>
+                    <p>A realy cool operating system designed for developers.</p>
                 </div>
             </div>
 
             <div class="project">
                 <img src="Images/Prj2.png" alt="Project">
                 <div>
-                    <p>Exploring AI-driven tools that generate fully responsive websites.</p>
+                    <h3>HamColorLib</h3>
+                    <p>A pointless project that creates all possible images in 6x6 px.</p>
                 </div>
             </div>
 
             <div class="project">
                 <img src="Images/Prj3.png" alt="Project">
                 <div>
-                    <p>Building a sleek code editor with custom syntax highlighting.</p>
+                    <h3>HamEngine</h3>
+                    <p>A game engine that doesnt take (Almost) any resources!</p>
                 </div>
             </div>
-
             <div class="project">
-                <img src="Images/Prj4.png" alt="Project">
                 <div>
-                    <p>Developing a futuristic UI with glowing effects and smooth transitions.</p>
+                    <h3>Coming Soon!</h3>
                 </div>
             </div>
         </div>
     </section>
         <div class="section-title">Contact Me</div>
     <section id="contact">
-        <p>Email: yourname@example.com</p>
-        <p>GitHub: github.com/yourprofile</p>
+        <p>Email: 1ham.group1@gmail.com</p>
+        <p>GitHub: github.com/HamGroup-Tech-Department</p>
         <p>______________________________________________________________</p>
+        <p> </p>
         <p>&copy; Haami</p>
     </section>
 
